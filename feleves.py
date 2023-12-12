@@ -101,8 +101,6 @@ imp=st.text_input(label='Joke',value="", max_chars=None, key=None, type="default
 
 
 pred = predict(imp)
-
-
 if pred:
     st.write('You are funny!')
 else:
