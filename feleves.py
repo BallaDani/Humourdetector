@@ -35,7 +35,7 @@ import seaborn as sns
 
 
 
-df = pd.read_csv('dataset.csv')
+""" df = pd.read_csv('dataset.csv')
 
 tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
                       lower=True, split=' ')
@@ -66,8 +66,8 @@ texts = pad_sequences(texts, maxlen=maxlen, dtype='float', padding='post', value
 texts = np.array(texts)
 labels = df['humor']
 labels = np.array([float(j) for j in labels])
-
-x_train, x_val, y_train, y_val = train_test_split(texts, labels, test_size=0.2, random_state=0)
+ """
+#x_train, x_val, y_train, y_val = train_test_split(texts, labels, test_size=0.2, random_state=0)
 
 
 model = load_model('model.h5')
