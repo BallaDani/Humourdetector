@@ -42,13 +42,7 @@ tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
 #tokenizer.fit_on_texts(np.array(df['text']))
 #vocab_size = len(tokenizer.word_index) + 1
 
-""" lengths=[]
-for x in range(len(df)):
-    i = df['text'][x]
-    i = tokenizer.texts_to_sequences([i])
-    lengths.append(len(i[0]))
-lengths = np.array(lengths)
-"""
+
 maxlen = 15
 
 
@@ -56,17 +50,7 @@ maxlen = 15
 
 
 
-""" df['humor'] = df['humor'].apply(lambda x: {True:1, False:0}.get(x))
-texts = np.array(df['text'])
-texts = tokenizer.texts_to_sequences(texts)
-for x in range(len(texts)):
-    if len(texts[x])>maxlen:
-        texts[x]=texts[x][:maxlen]
-texts = pad_sequences(texts, maxlen=maxlen, dtype='float', padding='post', value=0.0)
-texts = np.array(texts)
-labels = df['humor']
-labels = np.array([float(j) for j in labels]) 
- """
+
 #x_train, x_val, y_train, y_val = train_test_split(texts, labels, test_size=0.2, random_state=0)
 
 
@@ -92,12 +76,12 @@ def predict(text):
 
 
 
-def rund(imp):
+def pred(imp):
 
 
     pred = predict(imp)
     print(pred)
-    if pred==True:
+    if pred=='True':
         st.write('You are funny!')
     
     else:
@@ -105,9 +89,9 @@ def rund(imp):
 
 st.write("Enter a funny joke")
 
-imp=st.text_input(label='Joke',value=" ", max_chars=300, type="default", help=None, on_change=None, args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="visible")
+imp=st.text_input(label='Joke',value=" ", max_chars=300, type="default", help=None,  args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="invisible")
 
-st.button(label="Confirm", key=None, help=None, on_click=rund(imp), args=None, kwargs=None,  type="secondary", disabled=False, use_container_width=False)
+st.button(label="Test my Joke", on_click=pred(imp), args=None, kwargs=None,  type="secondary", disabled=False, use_container_width=False)
 
 
 
