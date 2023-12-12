@@ -42,13 +42,13 @@ tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
 #tokenizer.fit_on_texts(np.array(df['text']))
 #vocab_size = len(tokenizer.word_index) + 1
 
-lengths=[]
+""" lengths=[]
 for x in range(len(df)):
     i = df['text'][x]
     i = tokenizer.texts_to_sequences([i])
     lengths.append(len(i[0]))
 lengths = np.array(lengths)
-
+"""
 maxlen = 15
 
 
