@@ -35,12 +35,12 @@ import seaborn as sns
 
 
 
-""" df = pd.read_csv('dataset.csv')
+# df = pd.read_csv('dataset.csv')
 
 tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
                       lower=True, split=' ')
-tokenizer.fit_on_texts(np.array(df['text']))
-vocab_size = len(tokenizer.word_index) + 1
+#tokenizer.fit_on_texts(np.array(df['text']))
+#vocab_size = len(tokenizer.word_index) + 1
 
 lengths=[]
 for x in range(len(df)):
@@ -56,7 +56,7 @@ maxlen = 15
 
 
 
-df['humor'] = df['humor'].apply(lambda x: {True:1, False:0}.get(x))
+""" df['humor'] = df['humor'].apply(lambda x: {True:1, False:0}.get(x))
 texts = np.array(df['text'])
 texts = tokenizer.texts_to_sequences(texts)
 for x in range(len(texts)):
@@ -65,7 +65,7 @@ for x in range(len(texts)):
 texts = pad_sequences(texts, maxlen=maxlen, dtype='float', padding='post', value=0.0)
 texts = np.array(texts)
 labels = df['humor']
-labels = np.array([float(j) for j in labels])
+labels = np.array([float(j) for j in labels]) 
  """
 #x_train, x_val, y_train, y_val = train_test_split(texts, labels, test_size=0.2, random_state=0)
 
