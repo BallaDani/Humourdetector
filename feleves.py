@@ -96,4 +96,9 @@ def predict(text):
 
 st.write("Enter a funny joke")
 
-inp=st.text_input(label='Joke',value="", max_chars=None, key=None, type="default", help=None, autocomplete="Write your joke here", on_change=None, args=None, kwargs=None, placeholder=None, disabled=False, label_visibility="visible")
+imp=st.text_input(label='Joke',value="", max_chars=None, key=None, type="default", help=None, autocomplete="Write your joke here", on_change=None, args=None, kwargs=None, placeholder=None, disabled=False, label_visibility="visible")
+
+
+pred = predict(imp)
+print("Text:",imp)
+print('Humor detected: ',pred)
