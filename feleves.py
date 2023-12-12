@@ -92,7 +92,7 @@ def predict(text):
 
 
 
-def run():
+def run(imp):
 
 
     resp=' '
@@ -111,7 +111,7 @@ st.write("Enter a funny joke")
 
 imp=st.text_input(label='Joke',value=" ", max_chars=300, type="default", help=None, on_change=None, args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="visible")
 
-st.button(label="Confirm", key=None, help=None, on_click=run(), args=None, kwargs=None,  type="primary", disabled=False, use_container_width=False)
+st.button(label="Confirm", key=None, help=None, on_click=run(imp), args=None, kwargs=None,  type="primary", disabled=False, use_container_width=False)
 
 
 
