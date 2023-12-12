@@ -100,23 +100,28 @@ def predict(text):
     pred = decode_label[pred[0]]
     return pred
 
+def run():
+
+    resp=' '
+    st.write(resp)
+
+
+    pred = predict(imp)
+    print(pred)
+    if pred==True:
+        resp='You are funny!'
+    
+    else:
+        resp='You are Cringe'
 
 st.write("Enter a funny joke")
 
 imp=st.text_input(label='Joke',value=" ", max_chars=300, type="default", help=None, on_change=None, args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="visible")
 
+st.button(label="Confirm", key=None, help=None, on_click=run(), args=None, kwargs=None,  type="primary", disabled=False, use_container_width=False)
 
 
-resp=' '
-st.write(resp)
 
 
-pred = predict(imp)
-print(pred)
-if pred==True:
-    resp='You are funny!'
-    
-else:
-    resp='You are Cringe'
 
    
