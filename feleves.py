@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_autorefresh import st_autorefresh
 # For ML Models
 import tensorflow as tf
 from tensorflow import keras
@@ -100,5 +101,9 @@ imp=st.text_input(label='Joke',value="", max_chars=None, key=None, type="default
 
 
 pred = predict(imp)
+st.st_a
 
-st.write('Humor detected: ',pred)
+if pred:
+    st.write('You are funny!')
+else:
+    st.write('You are Cringe')
