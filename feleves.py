@@ -95,6 +95,9 @@ st.button(label="Test my Joke", on_click=pred(imp), args=None, kwargs=None,  typ
 
 
 
-
+text = "what's the difference between donald trump's hair and a wet racoon"
+pred = predict(text)
+print("Text:",text)
+print('Humor detected: ',pred)
 
    
