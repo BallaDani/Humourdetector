@@ -60,7 +60,7 @@ model = load_model('model.h5')
 #mc = ModelCheckpoint('model.h5', monitor='val_sparse_categorical_accuracy', mode='max', verbose=1, save_best_only=True)
 #history = model.fit(x_train, y_train, epochs=epochs, batch_size=8192, validation_data=(x_val, y_val))
 
-
+ctr=0
 
 def predict(text):
     text = tokenizer.texts_to_sequences([text])
@@ -75,24 +75,23 @@ def predict(text):
     return pred
 
 
-
 def pred(imp):
 
-
-    pred = predict(imp)
-    print(pred)
-    if pred=='True':
-        st.write('You are funny!')
+    if ctr==1:
+        pred = predict(imp)
+        print(pred)
+        if pred=='True':
+            st.write('You are funny!')
     
-    else:
-        st.write('You are Cringe!')
+        else:
+            st.write('You are Cringe!')
 
 st.write("Enter a funny joke")
 
 imp=st.text_input(label='Joke',value=" ", max_chars=300, type="default", help=None,  args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="hidden")
 
 st.button(label="Test my Joke", on_click=pred(imp), args=None, kwargs=None,  type="secondary", disabled=False, use_container_width=False)
-
+ctr=1
 
 
 text = "what's the difference between donald trump's hair and a wet racoon"
