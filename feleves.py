@@ -54,7 +54,7 @@ maxlen = 15
 #x_train, x_val, y_train, y_val = train_test_split(texts, labels, test_size=0.2, random_state=0)
 
 
-model = load_model('model.h5')
+model = load_model('model.keras'encoding='latin1')
 
 #epochs = 10
 #mc = ModelCheckpoint('model.h5', monitor='val_sparse_categorical_accuracy', mode='max', verbose=1, save_best_only=True)
