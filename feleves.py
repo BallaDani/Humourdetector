@@ -98,11 +98,13 @@ def predict(text):
 st.write("Enter a funny joke")
 
 imp=st.text_input(label='Joke',value="", max_chars=None, key=None, type="default", help=None, autocomplete="Write your joke here", on_change=None, args=None, kwargs=None, placeholder=None, disabled=False, label_visibility="visible")
-
-st.write("dassd")
+resp=' '
+st.write(resp)
 pred = predict(imp)
 print(pred)
-if pred:
-    st.write('You are funny!')
+if pred==True:
+    resp='You are funny!'
+    
 else:
-    st.write('You are Cringe')
+    resp='You are Cringe'
+   
