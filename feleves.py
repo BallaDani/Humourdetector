@@ -100,5 +100,5 @@ imp=st.text_input(label='Joke',value="", max_chars=None, key=None, type="default
 
 
 pred = predict(imp)
-print("Text:",imp)
-print('Humor detected: ',pred)
+
+st.write('Humor detected: ',pred)
