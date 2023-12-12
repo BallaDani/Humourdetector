@@ -51,6 +51,16 @@ lengths = np.array(lengths)
 
 maxlen = 15
 
+st.write("Enter a funny joke")
+
+imp=st.text_input(label='Joke',value=" ", max_chars=300, key=None, type="default", help=None, on_change=None, args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="visible")
+resp=' '
+st.write(resp)
+
+
+
+
+
 df['humor'] = df['humor'].apply(lambda x: {True:1, False:0}.get(x))
 texts = np.array(df['text'])
 texts = tokenizer.texts_to_sequences(texts)
@@ -95,11 +105,6 @@ def predict(text):
     pred = decode_label[pred[0]]
     return pred
 
-st.write("Enter a funny joke")
-
-imp=st.text_input(label='Joke',value=" ", max_chars=300, key=None, type="default", help=None, on_change=None, args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="visible")
-resp=' '
-st.write(resp)
 pred = predict(imp)
 print(pred)
 if pred==True:
@@ -107,4 +112,5 @@ if pred==True:
     
 else:
     resp='You are Cringe'
+
    
