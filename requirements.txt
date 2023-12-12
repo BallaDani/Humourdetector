@@ -6,7 +6,3 @@ scikit-learn
 matplotlib
 plotly
 seaborn
-tqdm
-os
-random
-IPython
