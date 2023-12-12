@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_autorefresh import st_autorefresh
+
 # For ML Models
 import tensorflow as tf
 from tensorflow import keras
