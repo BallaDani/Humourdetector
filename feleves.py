@@ -69,20 +69,6 @@ labels = np.array([float(j) for j in labels])
 
 x_train, x_val, y_train, y_val = train_test_split(texts, labels, test_size=0.2, random_state=0)
 
-""" model = Sequential()
-model.add(Input(shape=(maxlen)))
-model.add(Embedding(vocab_size, 8, input_length=maxlen))
-#model.add(Bidirectional(LSTM(16, activation='relu',dropout=0.15, return_sequences=True), merge_mode='concat'))
-#model.add(TimeDistributed(Dense(16, activation='relu')))
-model.add(LSTM(64, activation='relu',dropout=0.15, return_sequences=False))
-model.add(Flatten())
-#model.add(Dense(64, activation='relu'))
-#model.add(Dropout(0.25))
-model.add(Dense(2, activation='softmax'))
-
-model.compile(optimizer=Adam(learning_rate=0.0001),
-              loss='sparse_categorical_crossentropy',
-             metrics=['sparse_categorical_accuracy']) """
 
 model = load_model('model.h5')
 
@@ -116,10 +102,10 @@ def run():
     pred = predict(imp)
     print(pred)
     if pred==True:
-        resp='You are funny!'
+        st.write('You are funny!')
     
     else:
-        resp='You are Cringe'
+        st.write('You are Cringe')
 
 st.write("Enter a funny joke")
 
