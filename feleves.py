@@ -69,7 +69,7 @@ labels = np.array([float(j) for j in labels])
 
 x_train, x_val, y_train, y_val = train_test_split(texts, labels, test_size=0.2, random_state=0)
 
-model = Sequential()
+""" model = Sequential()
 model.add(Input(shape=(maxlen)))
 model.add(Embedding(vocab_size, 8, input_length=maxlen))
 #model.add(Bidirectional(LSTM(16, activation='relu',dropout=0.15, return_sequences=True), merge_mode='concat'))
@@ -82,11 +82,15 @@ model.add(Dense(2, activation='softmax'))
 
 model.compile(optimizer=Adam(learning_rate=0.0001),
               loss='sparse_categorical_crossentropy',
-             metrics=['sparse_categorical_accuracy'])
+             metrics=['sparse_categorical_accuracy']) """
+
+model = load_model('model.h5')
 
 epochs = 10
 #mc = ModelCheckpoint('model.h5', monitor='val_sparse_categorical_accuracy', mode='max', verbose=1, save_best_only=True)
-history = model.fit(x_train, y_train, epochs=epochs, batch_size=8192, validation_data=(x_val, y_val))
+#history = model.fit(x_train, y_train, epochs=epochs, batch_size=8192, validation_data=(x_val, y_val))
+
+
 
 def predict(text):
     text = tokenizer.texts_to_sequences([text])
@@ -100,7 +104,10 @@ def predict(text):
     pred = decode_label[pred[0]]
     return pred
 
+
+
 def run():
+
 
     resp=' '
     st.write(resp)
