@@ -84,7 +84,7 @@ def pred(imp):
         st.write('You are funny!')
     
    else:
-        st.write('You are Cringe!')
+        st.write('This was not funny!')
 
 st.write("Enter a funny joke")
 
