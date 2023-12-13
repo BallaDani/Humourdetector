@@ -98,7 +98,9 @@ imp=st.text_input(label='Joke',value=' ', max_chars=300, type="default", help=No
 but=st.button(label="Test my Joke", args=None, kwargs=None,  type="secondary", disabled=False, use_container_width=False)
 
 if but:
-    pred(imp)
+
+    if imp==' '
+        pred(imp)
 
 
 
