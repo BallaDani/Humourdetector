@@ -74,16 +74,17 @@ def predict(text):
     pred = np.argmax(pred, axis=-1)
     decode_label = {0:'False', 1:'True'}
     pred = decode_label[pred[0]]
-    return pred
+    cert=pred
+    return pred,cert
 
 
 def pred(imp):
 
     
-   pred = predict(imp)
+   pred,cert = predict(imp)
    print(pred)
    if pred=='True':
-        st.write('You are funny!')
+        st.write('You are funny!',cert)
     
    else:
         st.write('This was not funny!')
