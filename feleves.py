@@ -99,7 +99,7 @@ but=st.button(label="Test my Joke", args=None, kwargs=None,  type="secondary", d
 
 if but:
 
-    if imp==' '
+    if imp==' ':
         pred(imp)
 
 
