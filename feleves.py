@@ -54,7 +54,7 @@ maxlen = 15
 #x_train, x_val, y_train, y_val = train_test_split(texts, labels, test_size=0.2, random_state=0)
 
 
-model = load_model('model.keras')
+model = load_model('modello.h5')
 
 #epochs = 10
 #mc = ModelCheckpoint('model.h5', monitor='val_sparse_categorical_accuracy', mode='max', verbose=1, save_best_only=True)
@@ -88,7 +88,7 @@ def pred(imp):
 
 st.write("Enter a funny joke")
 
-imp=st.text_input(label='Joke',value=" ", max_chars=300, type="default", help=None,  args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="hidden")
+imp=st.text_input(label='Joke',value=imp, max_chars=300, type="default", help=None,  args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="hidden")
 
 st.button(label="Test my Joke", on_click=pred(imp), args=None, kwargs=None,  type="secondary", disabled=False, use_container_width=False)
 
