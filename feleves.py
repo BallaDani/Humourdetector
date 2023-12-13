@@ -103,6 +103,9 @@ imp=st.text_input(label='Joke',value=defa, max_chars=300, type="default", help=N
 
 but=st.button(label="Test my Joke", args=None, kwargs=None,  type="secondary", disabled=False, use_container_width=False)
 box=st.selectbox("I don't want to enter my own joke: ",(" ","what's the difference between donald trump's hair and a wet racoon", "All pants are breakaway pants if you're angry enough","5 reasons the 2016 election feels so personal","Pasco police shot mexican migrant from behind, new autopsy shows"))
+if box:
+    defa=box
+
 if but:
 
     if imp!='':
