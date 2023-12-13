@@ -36,6 +36,7 @@ import seaborn as sns
 
 
 df = pd.read_csv('dataset.csv')
+df.drop(df.index[0:100000])
 
 tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
                       lower=True, split=' ')
