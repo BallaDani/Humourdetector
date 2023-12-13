@@ -89,12 +89,16 @@ def pred(imp):
 st.write("Enter a funny joke")
 
 imp=st.text_input(label='Joke',value=' ', max_chars=300, type="default", help=None,  args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="hidden")
+lst=st.
 
-if imp:
+
+#if imp:
+ #   pred(imp)
+
+but=st.button(label="Test my Joke", args=None, kwargs=None,  type="secondary", disabled=False, use_container_width=False)
+
+if but:
     pred(imp)
-
-#st.button(label="Test my Joke", on_click=pred(imp), args=None, kwargs=None,  type="secondary", disabled=False, use_container_width=False)
-
 
 
 
