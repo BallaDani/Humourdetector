@@ -60,7 +60,7 @@ model = load_model('modello.h5')
 #mc = ModelCheckpoint('model.h5', monitor='val_sparse_categorical_accuracy', mode='max', verbose=1, save_best_only=True)
 #history = model.fit(x_train, y_train, epochs=epochs, batch_size=8192, validation_data=(x_val, y_val))
 
-ctr=0
+
 
 def predict(text):
     text = tokenizer.texts_to_sequences([text])
@@ -96,7 +96,7 @@ imp=st.text_input(label='Joke',value=' ', max_chars=300, type="default", help=No
  #   pred(imp)
 
 but=st.button(label="Test my Joke", args=None, kwargs=None,  type="secondary", disabled=False, use_container_width=False)
-
+box=st.selectbox("I want to enter my own joke","what's the difference between donald trump's hair and a wet racoon", "All pants are breakaway pants if you're angry enough","5 reasons the 2016 election feels so personal","Pasco police shot mexican migrant from behind, new autopsy shows")
 if but:
 
     if imp!=' ':
