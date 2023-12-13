@@ -43,7 +43,7 @@ def create_tokenizer():
     tokenizer.fit_on_texts(np.array(df['text']))
     vocab_size = len(tokenizer.word_index) + 1
 
-
+create_tokenizer()
 maxlen = 15
 
 
