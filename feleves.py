@@ -40,7 +40,7 @@ import seaborn as sns
 tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
                       lower=True, split=' ')
 #tokenizer.fit_on_texts(np.array(df['text']))
-#vocab_size = len(tokenizer.word_index) + 1
+vocab_size = len(tokenizer.word_index) + 1
 
 
 maxlen = 15
