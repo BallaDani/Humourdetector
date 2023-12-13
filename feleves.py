@@ -34,23 +34,14 @@ import seaborn as sns
 # Miscellaneous
 
 
+@st.experimental_singleton
+def create_tokenizer():
 
-
-
-#df = pd.read_csv('dataset.csv')
-#df.drop(df.index[0:180000])
-
-
-
-#tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
-#                      lower=True, split=' ')
-#tokenizer.fit_on_texts(np.array(df['text']))
-
-with open('tok.json', 'r') as json_file:
-    json_data = json.load(json_file)
-    tokenizer = tokenizer_from_json(json_data)
-tokenizer=tokenizer_from_json('tok.json')
-vocab_size = len(tokenizer.word_index) + 1
+    df = pd.read_csv('dataset.csv')
+    tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
+                      lower=True, split=' ')
+    tokenizer.fit_on_texts(np.array(df['text']))
+    vocab_size = len(tokenizer.word_index) + 1
 
 
 maxlen = 15
