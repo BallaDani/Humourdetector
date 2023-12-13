@@ -1,6 +1,7 @@
 import streamlit as st
 
 # For ML Models
+import json
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.layers import *
@@ -13,6 +14,7 @@ from tensorflow.keras.callbacks import *
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.text import tokenizer_from_json
 
 # For Data Processing
 import numpy as np
@@ -35,13 +37,19 @@ import seaborn as sns
 
 
 
-df = pd.read_csv('dataset.csv')
-df.drop(df.index[0:180000])
+#df = pd.read_csv('dataset.csv')
+#df.drop(df.index[0:180000])
 
-tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
-                      lower=True, split=' ')
-tokenizer.fit_on_texts(np.array(df['text']))
 
+
+#tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
+#                      lower=True, split=' ')
+#tokenizer.fit_on_texts(np.array(df['text']))
+
+with open('tok.json', 'r') as json_file:
+    json_data = json.load(json_file)
+    tokenizer = tokenizer_from_json(json_data)
+tokenizer=tokenizer_from_json('tok.json')
 vocab_size = len(tokenizer.word_index) + 1
 
 
