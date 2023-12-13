@@ -71,7 +71,7 @@ def predict(text):
     text = pad_sequences(text, maxlen=maxlen, dtype='float', padding='post', value=0.0)
     text = np.array(text)
     pred = model.predict(text)
-    cert=pred
+    cert=pred[1]
     pred = np.argmax(pred, axis=-1)
     decode_label = {0:'False', 1:'True'}
     pred = decode_label[pred[0]]
