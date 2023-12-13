@@ -88,7 +88,7 @@ def pred(imp):
 
 st.write("Enter a funny joke")
 
-imp=st.text_input(label='Joke',value=' ', max_chars=300, type="default", help=None,  args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="hidden")
+imp=st.text_input(label='Joke',value='', max_chars=300, type="default", help=None,  args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="hidden")
 #lst=st.
 
 
