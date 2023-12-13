@@ -41,6 +41,7 @@ df.drop(df.index[0:180000])
 tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
                       lower=True, split=' ')
 #tokenizer.fit_on_texts(np.array(df['text']))
+tokenizer.fit_on_texts(np.array("alma"))
 vocab_size = len(tokenizer.word_index) + 1
 
 
