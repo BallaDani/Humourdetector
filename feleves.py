@@ -85,14 +85,16 @@ def pred(imp):
    pred,cert = predict(imp)
    print(pred)
    if pred=='True':
-        st.write('You are funny!',cert)
+        st.write('You are funny! ',cert)
     
    else:
-        st.write('This was not funny!',cert)
+        st.write('This was not funny !',cert)
 
 st.write("Enter a funny joke")
 
-imp=st.text_input(label='Joke',value='', max_chars=300, type="default", help=None,  args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="hidden")
+defa=''
+
+imp=st.text_input(label='Joke',value=defa, max_chars=300, type="default", help=None,  args=None, kwargs=None, placeholder="Write your joke here", disabled=False, label_visibility="hidden")
 #lst=st.
 
 
@@ -105,6 +107,7 @@ if but:
 
     if imp!=' ':
         pred(imp)
+        defa=''
 
 
 
