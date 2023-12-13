@@ -34,7 +34,7 @@ import seaborn as sns
 # Miscellaneous
 
 
-@st.experimental_singleton
+@st.cache_resource
 def create_tokenizer():
 
     df = pd.read_csv('dataset.csv')
