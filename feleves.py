@@ -35,11 +35,11 @@ import seaborn as sns
 
 
 
-# df = pd.read_csv('dataset.csv')
+df = pd.read_csv('dataset.csv')
 
 tokenizer = Tokenizer(filters='"&(),-/:;<=>[\\]_`{|}~\t\n0123456789',
                       lower=True, split=' ')
-#tokenizer.fit_on_texts(np.array(df['text']))
+tokenizer.fit_on_texts(np.array(df['text']))
 vocab_size = len(tokenizer.word_index) + 1
 
 
