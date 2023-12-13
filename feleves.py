@@ -77,14 +77,14 @@ def predict(text):
 
 def pred(imp):
 
-    if ctr==1:
-        pred = predict(imp)
-        print(pred)
-        if pred=='True':
-            st.write('You are funny!')
     
-        else:
-            st.write('You are Cringe!')
+   pred = predict(imp)
+   print(pred)
+   if pred=='True':
+        st.write('You are funny!')
+    
+   else:
+        st.write('You are Cringe!')
 
 st.write("Enter a funny joke")
 
